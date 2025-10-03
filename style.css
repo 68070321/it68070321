@@ -10,10 +10,15 @@ body {
 }
 
 .showMoney {
-    background-color: cadetblue;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    
+}
+
+textarea {
+    resize: none;
+    text-align: center;
+    height: 200px;
+    background-color: aliceblue;
 }
 
 .container1 {
