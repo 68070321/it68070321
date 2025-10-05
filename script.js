@@ -1,11 +1,8 @@
-let myinput = document.getElementById("myinput");
 
 let outputUI = document.getElementById("historyUI");
 
 let bankcash = document.getElementById("currentaccount");
 let mycash = document.getElementById("currentcash");
-let bankval = bankcash.value;
-let myval = mycash.value;
 
 function Depo_Or_With() {
     let dowinput = document.getElementById("bankoperatorcash");
@@ -14,31 +11,33 @@ function Depo_Or_With() {
 
     let bankcash = document.getElementById("currentaccount");
     let mycash = document.getElementById("currentcash");
-    let bankval = bankcash.value;
-    let myval = mycash.value;
 
-    if (selected == "Deposit") {
-        if (Number(myval) >= Number(dowval) && Number(dowval) > 0 ) {
-            myval = Number(myval) - Number(dowval);
-            bankval = Number(bankval) + Number(dowval);
-        }
+    if (selected === "Deposit") {
+    if (Number(mycash.value) >= Number(dowval) && Number(dowval) > 0) {
+        mycash.value = Number(mycash.value) - Number(dowval);
+        bankcash.value = Number(bankcash.value) + Number(dowval);
+
+        outputUI.textContent = "Bank balance " + bankcash.value + ", " + "My Balance " + mycash.value;
     } else {
-        if (Number(bankval) >= Number(dowval) && Number(bankval) >= Number(myinput) && Number(myval) >= Number(dowval) && Number(dowval) > 0 ) {
-            myval = Number(myval) + Number(dowval);
-            bankval = Number(bankval) - Number(dowval);
-        }
+        outputUI.textContent = "Bank balance " + bankcash.value + ", " + "My Balance " + mycash.value + " (Error! number not changed)";
     }
+} else if (selected === "Withdraw") {
+    if (Number(bankcash.value) >= Number(dowval) && Number(dowval) > 0) {
+        mycash.value = Number(mycash.value) + Number(dowval);
+        bankcash.value = Number(bankcash.value) - Number(dowval);
 
-    outputUI.textContent = "Bank balance " + Number(bankval) + ", " + "My Balance " + Number(myval);
+        outputUI.textContent = "Bank balance " + bankcash.value + ", " + "My Balance " + mycash.value;
+    } else {
+        outputUI.textContent = "Bank balance " + bankcash.value + ", " + "My Balance " + mycash.value + " (Error! number not changed)";
+    }
+}
 }
 
 function ChangeMoney() {
     let bankcash = document.getElementById("currentaccount");
     let mycash = document.getElementById("currentcash");
-    let bankval = bankcash.value;
-    let myval = mycash.value;
 
-    myval = Number(myval);
-    bankval = Number(bankval);
-    outputUI.textContent = "Bank balance " + bankval + ", " + "My Balance " + myval;
+    if (Number(bankcash.value) >= 0 && Number(mycash.value) >= 0) {
+    outputUI.textContent = "Bank balance " + bankcash.value + ", " + "My Balance " + mycash.value;
+    }
 }
