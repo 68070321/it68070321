@@ -9,9 +9,12 @@ body {
     margin: 0;
 }
 
+select {
+    display: block;
+}
+
 .showMoney {
     display: grid;
-    
 }
 
 textarea {
@@ -25,7 +28,27 @@ textarea {
     color: blue;
 }
 
+.nextto {
+    display: flex;
+    justify-content: space-around;
+}
+
 .container2 {
     display: grid;
     grid-template-columns: 50% 50%;
+}
+
+.AccountInfo {
+    position: relative;
+}
+
+.pfp {
+    position: relative;
+    top: -100px;
+}
+
+.pfp2 {
+    position: relative;
+    right: -100px;
+    top: -100px;
 }

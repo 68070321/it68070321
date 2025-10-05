@@ -6,6 +6,7 @@
     <title>Document</title>
     <link rel ="stylesheet" href="style.css">
 </head>
+
 <body background="abstract-organic-pattern-design-background_1048-19286.jpg">
     <nav>
         <p>68070321</p>
@@ -28,11 +29,51 @@
     <div>
         <div class="container2">
             <div>
-                Enter number: <input type="number" id="myinput" value="0">
-                <button onclick="add()">+1</button>
+
+                <h2>Account Review</h2>
+                <div class="AccountInfo">
+                    <img src="user.png" width="100" alt="user" >
+                    <h class="pfp">Account Information</h>
+                    <p class="pfp2">Name: Suwannaphoom Pumswang</p>
+                    <p class="pfp2">Type: Savings Account</p>
+                </div>
+
+                <div class="AccountInfo">
+                    <img src="briefcase.png" width="100" alt="briefcase" >
+                    <h class="pfp">Balance Information</h>
+                    <p class="pfp2">Current Account : <input type="number" id="currentaccount" value="1000"> </p>
+                    <p class="pfp2">Current Cash : <input type="number" id="currentcash" value="1000"> </p>
+                    <button class="pfp2" onclick="ChangeMoney()">Change</button>
+                </div>
+
+                <div class="AccountInfo">
+                    <img src="toolbox.png" width="100" alt="toolbox" >
+                    <h class="pfp">Bank Operation</h>
+                    <p class="pfp2">
+                        <select name="bankoperator" id="bankoperator" class="nextto">
+                        <option value="Deposit">Deposit</option>
+                        <option value="Withdraw">Withdraw</option>
+                        </select> <input type="number" id="bankoperatorcash" value="1" class="">
+                    </p>
+                    <button class="pfp2" onclick="Depo_Or_With()" >Proceed</button>
+                </div>
             </div>
             <div>
-                Right
+                <h2>Financial Tools</h2>
+                <div class="AccountInfo">
+                    <img src="coins.png" width="100" alt="coins" >
+                    <h class="pfp">Currency Converter</h>
+                    <p class="pfp2">
+                        <p class="pfp2">Input Balance : <input type="number" id="currentaccount" value="1000"> </p>
+                        <p class="pfp2">Output Balance : <input type="number" id="currentcash" value="1000"> </p>
+                        <p class="pfp2">Input currency</p>
+                        <select name="bankoperator" id="bankoperator" class="pfp2">
+                        <option value="Deposit">USD</option>
+                        <option value="Withdraw">THB</option>
+                        </select>
+                    </p>
+                    <button class="pfp2">Convert</button>
+                </div>
             </div>
         </div>
     </div>
